@@ -1,47 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:paytm_demo/Screen/Login_Screen.dart';
 import 'package:paytm_demo/Units/strings.dart';
 import 'package:paytm_demo/Widgets/TextUnit.dart';
 
-class Intro_Screen extends StatelessWidget {
+class Intro_Screen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      bottomNavigationBar: bottomColor(),
-      body: ListView(
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
-              ),
-              scanText(),
-              payText(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              noKycText(),
-              paytmImg(),
-            ],
-          )
-        ],
+  _Intro_ScreenState createState() => _Intro_ScreenState();
+}
+
+class _Intro_ScreenState extends State<Intro_Screen> {
+  @override
+  void initState() {
+    super.initState();
+    new Future.delayed(
+      const Duration(seconds: 4),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Login_Screen(),
+        ),
       ),
     );
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        bottomNavigationBar: bottomColor(),
+        body: mainLayout());
+  }
+
+  Widget mainLayout() {
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.1,
+        ),
+        Expanded(child: scanText()),
+        Expanded(child: payText()),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.02,
+        ),
+        noKycText(),
+        Expanded(
+          child: paytmImg(),
+          flex: 4,
+        ),
+      ],
+    );
+  }
+
   Widget scanText() {
-    return CustomText(
-      text: strings.nowScan,
-      color: Colors.blueAccent,
-      FontSize: 35,
-      FontWeights: FontWeight.bold,
+    return FittedBox(
+      child: CustomText(
+        text: strings.nowScan,
+        color: Colors.blue[900],
+        FontSize: 5,
+        FontWeights: FontWeight.bold,
+      ),
     );
   }
 
   Widget payText() {
     return CustomText(
       text: strings.payUse,
-      color: Colors.blueAccent,
+      color: Colors.blue[900],
       FontSize: 35,
       FontWeights: FontWeight.w400,
     );
@@ -58,14 +82,14 @@ class Intro_Screen extends StatelessWidget {
       child: CustomText(
         text: strings.noWallet,
         FontSize: 12,
-        color: Colors.blueAccent,
+        color: Colors.blue[900],
       ),
     );
   }
 
   Widget bottomColor() {
     return Container(
-      color: Colors.blueAccent,
+      color: Colors.blue[900],
       height: 40,
       child: Column(
         children: <Widget>[

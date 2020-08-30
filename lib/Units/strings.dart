@@ -5,19 +5,30 @@ class strings {
   static String paytm = "Paytm";
   static String noWallet = "No wallet KYC needed for UPI Payments";
 
+  //This All strings for signup Page
+  static String signup="New Account";
+  static String welcome="Welcome to Paytm";
+  static String login="Login";
+  static String regFail="Please Enter Valid value";
+
   //This all String For login Page
   static String changeLanguage = "Change Language";
   static String skip = "Skip";
   static String loginOrCreateAccount = "Login or Create an Account";
   static String payUsingUpi = "Pay Using UPI, Wallet, Bank Account and Card";
   static String mobileNumber = "Mobile Number";
+  static String name="Name";
   static String password = "Password";
   static String needHelp = "Need Help?";
   static String proceedLogin = "Proceed Login";
+  static String proceedSingup = "Proceed Signup";
   static String createAccount = "Create New Account";
   static String termAndCondition =
       "By propceeding, you agree to our Term & Conditions & Privacy "
       "policy. Standard operator charges may apply for SMS";
+
+  static String loginFail="Login Fail";
+  static String failMsg="Enter Valid Email and Password";
 
   //This All strings for home page
   static String rechargeAndBill = "Recharge & Pay"
@@ -32,6 +43,7 @@ class strings {
   static String ola = "Ola Cabs";
   static String McDelivery = "McDelivery";
   static String scanAnyQR = "Scan Any QR";
+  static String payScan="Scan Any QR in ";
 
   //This all strings for drawer
   static String cashback = "Cashback Vouchers & Reward Ponit";
@@ -41,7 +53,8 @@ class strings {
   static String orderBookingMsg =
       "Recharge, Bill Payments, Shopping, Movies & Other";
   static String settings = "Settings";
-  static String settingMsg = "Profile, Payment,Security,Language,Notification";
+  static String settingMsg = "Profile,Payment,Security, "
+      "Language,Notification";
 
   //This all String for setting page
   static String editProfile = "Edit Profile";
@@ -58,4 +71,10 @@ class strings {
   static String chatSettings = "Chat Settings";
   static String logout = "Logout";
   static String version = "V 8.13.2";
+
+
+  static String firstScan="First Scan QR Code !!!!";
+  static String proceedTransaction="Proceed To Transaction";
+  static String transactionId="Transaction Id: ";
+  static String plzTapOnQrCode="Tap on QR Code";
 }
